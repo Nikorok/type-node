@@ -127,9 +127,9 @@ In future you will be able to download pack of types
 
 ```javascript
 const type = require('type-node');
-const authTypes = require('plus-type-node');
+const plusTypes = require('plus-type-node');
 
-type.pack(authTypes);
+type.pack(plusTypes);
 ```
 
 ## Structure of pack
