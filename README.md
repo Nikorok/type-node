@@ -14,19 +14,19 @@ type.use('email', e => /^[^]+\@\w+\.\w+$/.test(e));
 type.use('description', e => e.trim().length > 100);
 
 const schema = {
-	id: {
-		type: 'number',
-		required: true,
-	},
-	description: {
-		type: 'description',
-	},
+  id: {
+    type: 'number',
+    required: true,
+  },
+  description: {
+    type: 'description',
+  },
 };
 
 function addUser(email, password, data) {
-	if (type.is(email, 'email') && type.shape(data, schema)) {
-		// Logic
-	}
+  if (type.is(email, 'email') && type.shape(data, schema)) {
+    // Logic
+  }
 }
 ```
 
@@ -105,17 +105,17 @@ const type = require('type-node');
 
 // Schema key options
 const schema = {
-	name: {
-		type: 'string', //type of value,
-		required: true, //is this key required
-	},
-	age: {
-		type: 'int',
-	},
+  name: {
+    type: 'string', //type of value,
+    required: true, //is this key required
+  },
+  age: {
+    type: 'int',
+  },
 };
 
 const data = {
-	name: 'Nikita',
+  name: 'Nikita',
 };
 
 console.log(type.shape(data, schema)); // true
@@ -132,4 +132,14 @@ const authTypes = require('plus-type-node');
 type.pack(authTypes);
 ```
 
-## How to make your own pack
+## Structure of pack
+
+```javascript
+module.exports = {
+  name: 'your-pack', // Name of your pack
+  types: {
+    // Your package types
+    email: v => /^[^]+\@\w+\.\w+$/.test(v),
+  },
+};
+```
