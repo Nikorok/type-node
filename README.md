@@ -66,6 +66,8 @@ console.log(type.is({}, ['object', 'string'])); // true, also have multiple mode
 - null
 - error
 - date
+- promise
+- iterable
 
 also you can add your custom type with `"use"` or add pack with `"pack"`.
 

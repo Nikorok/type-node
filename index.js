@@ -62,6 +62,12 @@
 		date(v) {
 			return v instanceof Date;
 		},
+		promise(v) {
+			return v instanceof Promise && typeof v.then === 'function';
+		},
+		iterable(v) {
+			return typeof v[Symbol.iterator] === 'function';
+		},
 	};
 
 	/**
