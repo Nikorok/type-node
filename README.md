@@ -7,7 +7,7 @@
 ### Example
 
 ```javascript
-const type = require('type-node');
+const type = require('@nikitanaversus/type-node');
 
 type.use('email', e => /^[^]+\@\w+\.\w+$/.test(e));
 
@@ -33,7 +33,7 @@ function addUser(email, password, data) {
 ## Installation
 
 ```
-npm install type-node
+npm install @nikitanaversus/type-node
 ```
 
 `is(e: any, type: string | any): boolean`
@@ -41,7 +41,7 @@ npm install type-node
 Check if element type equal type
 
 ```javascript
-const type = require('type-node');
+const type = require('@nikitanaversus/type-node');
 
 console.log(type.is('something', 'string')); // true
 console.log(type.is(12.1, 'float')); // true
@@ -76,7 +76,7 @@ also you can add your custom type with `"use"` or add pack with `"pack"`.
 Use to add new custom type.
 
 ```javascript
-const type = require('type-node');
+const type = require('@nikitanaversus/type-node');
 
 // Must return boolean
 type.use('email', e => /^[^]+\@\w+\.\w+$/.test(e));
@@ -89,7 +89,7 @@ console.log(type.is('me@email.com', 'email')); // true
 return type(s) of element, with custom or pack types.
 
 ```javascript
-const type = require('type-node');
+const type = require('@nikitanaversus/type-node');
 
 type.use('email', v => /^[^]+\@\w+\.\w+$/.test(v));
 
@@ -103,7 +103,7 @@ console.log(type.of('me@email.com')); // ['string', 'email']
 Return is element equal schema
 
 ```javascript
-const type = require('type-node');
+const type = require('@nikitanaversus/type-node');
 
 // Schema key options
 const schema = {
@@ -121,27 +121,4 @@ const data = {
 };
 
 console.log(type.shape(data, schema)); // true
-```
-
-`pack(pack: object): void`
-
-In future you will be able to download pack of types
-
-```javascript
-const type = require('type-node');
-const plusTypes = require('plus-type-node');
-
-type.pack(plusTypes);
-```
-
-## Structure of pack
-
-```javascript
-module.exports = {
-  name: 'your-pack', // Name of your pack
-  types: {
-    // Your package types
-    email: v => /^[^]+\@\w+\.\w+$/.test(v),
-  },
-};
 ```

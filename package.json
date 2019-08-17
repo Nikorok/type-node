@@ -1,6 +1,6 @@
 {
 	"name": "@nikitanaversus/type-node",
-	"version": "1.0.1",
+	"version": "1.0.3",
 	"description": "Little lib for easier work with types",
 	"main": "index.js",
 	"repository": {
